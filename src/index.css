@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #e2e8f0;
+  background: #020817;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  background: linear-gradient(135deg, #020817 0%, #0f172a 30%, #111827 100%);
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-white/10 bg-white/5 shadow-xl backdrop-blur-lg;
+}
+
+.glow-button {
+  @apply relative overflow-hidden rounded-xl font-semibold text-white transition duration-300 hover:scale-[1.01];
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.glow-button:hover::before {
+  transform: translateX(100%);
+}
+
+.sos-button {
+  @apply glow-button animate-pulse-glow rounded-full bg-gradient-to-br from-red-500 via-red-600 to-red-700 shadow-[0_0_30px_rgba(239,68,68,0.5)] hover:shadow-[0_0_40px_rgba(239,68,68,0.7)];
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
